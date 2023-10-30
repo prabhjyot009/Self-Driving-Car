@@ -37,13 +37,29 @@ class Road{
                 this.right,
                 i/this.laneCount
             );
+<<<<<<< HEAD
             
             ctx.setLineDash([20,20]);
+=======
+                ctx.setLineDash([20,20]);
+>>>>>>> 8a82212d63844297c5b6eb7798b6e3b84c9f9550
             ctx.beginPath();
             ctx.moveTo(x,this.top);
             ctx.lineTo(x,this.bottom);
             ctx.stroke();
         }
+<<<<<<< HEAD
+=======
+        ctx.setLineDash([]);
+        this.borders.forEach(border=>{
+            ctx.beginPath();
+            ctx.moveTo(border[0].x,border[0].y);
+            ctx.lineTo(border[1].x,border[1].y);
+            ctx.stroke();
+        });
+    }
+}
+>>>>>>> 8a82212d63844297c5b6eb7798b6e3b84c9f9550
 
         ctx.setLineDash([]);
         this.borders.forEach(border=>{

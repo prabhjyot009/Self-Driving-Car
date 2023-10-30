@@ -1,6 +1,7 @@
 class Sensor{
     constructor(car){
         this.car=car;
+<<<<<<< HEAD
         this.rayCount=5;
         this.rayLength=150;
         this.raySpread=Math.PI/2;
@@ -97,4 +98,32 @@ class Sensor{
             ctx.stroke();
         }
     }        
+=======
+        this.rayCount=31
+        this.rayLength=100;
+        this.raySpread=Math.PI/4;
+
+        this.rays=[];
+    }
+
+    update(){
+        this.rays=[];
+        for(let i=0;i<this.rayCount;i++){
+            const angle=lerp(
+                -this.raySpread,
+                this.raySpread,
+                i/(this.rayCount-1)
+            );
+            const ray={
+                x:this.car.x,
+                y:this.car.y,
+                angle:this.car.angle+angle,
+                distance:this.rayLength,
+                hit:false
+            };
+            this.rays.push(ray);
+        }
+        this.#castRays();
+    }
+>>>>>>> 8a82212d63844297c5b6eb7798b6e3b84c9f9550
 }
